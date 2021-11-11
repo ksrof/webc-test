@@ -6,8 +6,8 @@ class Country extends HTMLElement {
     this.shadow = this.attachShadow({ mode: "open" });
   }
 
-  connectedCallback() {
-    fetch(apiUrl)
+  async connectedCallback() {
+    await fetch(apiUrl)
       .then((resp) => resp.json())
       .then((country) => {
         for (let i = 0; i < country.length; i++) {
